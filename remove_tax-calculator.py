@@ -1,4 +1,4 @@
-# after entering net price, program will calculate tax prices for different countries
+# after entering gross price, program will remove VAT
 
 vat_rates = {
     "Germany": 1.19,
@@ -20,9 +20,8 @@ vat_rates = {
     "Sweden": 1.25
 }
 
-net_price = input("Enter net price: " + "€")
+gross_price = input("Enter gross price: " + "€")
 
 for country, vat_rate in vat_rates.items():
-    result = (vat_rate) * int(net_price)
-    print("VAT price - " + country + ": " + str(round(result)) + " €")
-
+    result = int(gross_price) / (vat_rate)
+    print("NET price - " + country + ": " + str(round(result)) + " € net")
