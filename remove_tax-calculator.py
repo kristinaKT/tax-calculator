@@ -1,6 +1,8 @@
 # after entering gross price, program will remove VAT
 
-vat_rates = {
+def net_calculator():
+
+    vat_rates = {
     "Germany": 1.19,
     "Austria": 1.20,
     "Netherlands": 1.21,
@@ -19,9 +21,14 @@ vat_rates = {
     "Romania": 1.19,
     "Sweden": 1.25
 }
+    print("________________________________")
+    print("")
+    gross_price = input("Enter gross price: " + "€")
+    print("")
 
-gross_price = input("Enter gross price: " + "€")
-
-for country, vat_rate in vat_rates.items():
-    result = int(gross_price) / (vat_rate)
-    print("NET price - " + country + ": " + str(round(result)) + " € net")
+    for country, vat_rate in vat_rates.items():
+        result = int(gross_price) / (vat_rate)
+        print("NET price - " + country + ": " + str(round(result)) + " € net")
+()
+for i in range(100):
+    net_calculator()

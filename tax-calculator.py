@@ -1,6 +1,9 @@
 # after entering net price, program will calculate tax prices for different countries
 
-vat_rates = {
+
+def tax_calculator():
+        
+    vat_rates = {
     "Germany": 1.19,
     "Austria": 1.20,
     "Netherlands": 1.21,
@@ -19,10 +22,15 @@ vat_rates = {
     "Romania": 1.19,
     "Sweden": 1.25
 }
+    print("________________________________")
+    print("")
+    net_price = input("Enter net price: " + "€")
+    print("")
 
-net_price = input("Enter net price: " + "€")
+    for country, vat_rate in vat_rates.items():
+        result = (vat_rate) * int(net_price)
+        print("VAT price - " + country + ": " + str(round(result)) + " €")
+()
 
-for country, vat_rate in vat_rates.items():
-    result = (vat_rate) * int(net_price)
-    print("VAT price - " + country + ": " + str(round(result)) + " €")
-
+for i in range(100):
+    tax_calculator()
